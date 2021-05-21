@@ -1,6 +1,7 @@
 # Missing-value-handling-by-RF
 
-Traditionally, the missing values in the dataset are filled by arithmetic mean/ mode. However, this seems too roughly to compute the missing data since it ignores the difference among the samples with missing values. A more accurate method for handling the missing values is using Random Forest (RF) which is proposed by Fei Tang and Ishwaran (2017). The RF computes the missing data considering their corresponding samples' uniqueness located by both their class labels and the correlation with other samples in the same class.\\
+Traditionally, the missing values in the dataset are filled by arithmetic mean/ mode. However, this seems too roughly to compute the missing data since it ignores the difference among the samples with missing values. A more accurate method for handling the missing values is using Random Forest (RF) which is proposed by Fei Tang and Ishwaran (2017). The RF computes the missing data considering their corresponding samples' uniqueness located by both their class labels and the correlation with other samples in the same class.\
+\
 Using RF for compute the missing data, you need to do the following steps:\
 Step1, make an initial guess of the missing data in the dataset with arithmetic mean/ mode.\
 Step2, using the dataset to build a RF.\
