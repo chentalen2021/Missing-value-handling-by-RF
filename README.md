@@ -4,19 +4,19 @@ Traditionally, the missing values in the dataset are filled by arithmetic mean/ 
 \
 Using RF for compute the missing data, you need to do the following steps:\
 \
--Step1, make an initial guess of the missing data in the dataset with arithmetic mean/ mode.\
+- Step1, make an initial guess of the missing data in the dataset with arithmetic mean/ mode.\
 \
--Step2, using the dataset to build a RF.\
+- Step2, using the dataset to build a RF.\
 \
--Step3, apply the data samples into the RF and get the leaf indices they belong to.\
+- Step3, apply the data samples into the RF and get the leaf indices they belong to.\
 \
--Step4, initiate a proximity matrix with the shape of num_samples * num_samples (the total number of samples in the dataset) and the values of 0.\
+- Step4, initiate a proximity matrix with the shape of num_samples * num_samples (the total number of samples in the dataset) and the values of 0.\
 \
--Step5, compare the samples' leaf indices pair by pair through all the samples. If there are two samples (e.g., the i-th sample and the j-th sample) are in the same leaf, update the proximity matrix by add 1 to the position of (i, j) and (j, i).\
+- Step5, compare the samples' leaf indices pair by pair through all the samples. If there are two samples (e.g., the i-th sample and the j-th sample) are in the same leaf, update the proximity matrix by add 1 to the position of (i, j) and (j, i).\
 \
--Step6, refine the initial guess (arithmetic mean/ mode) in the dataset with the proximity matrix. The missing data (e.g., male) of categorical type (e.g., gender) of the m-th sample should be refined by weighted frequency W*F. F refers to the frequency of "male" values in the gender column, W refers to the weight of "male" regarding the samples which have the same sex values to the m-th sample.  The missing data (e.g., 23) of numeric type (e.g., age) of the m-th sample should be refined by weighted average V*W. V is the value of the age of the m-th sample.\
+- Step6, refine the initial guess (arithmetic mean/ mode) in the dataset with the proximity matrix. The missing data (e.g., male) of categorical type (e.g., gender) of the m-th sample should be refined by weighted frequency W*F. F refers to the frequency of "male" values in the gender column, W refers to the weight of "male" regarding the samples which have the same sex values to the m-th sample.  The missing data (e.g., 23) of numeric type (e.g., age) of the m-th sample should be refined by weighted average V*W. V is the value of the age of the m-th sample.\
 \
--Repeat step2 ~ 6 until the guess of the missing values do not change.\
+- Repeat step2 ~ 6 until the guess of the missing values do not change.\
 \
 \
 Using this python module, you need to:\
