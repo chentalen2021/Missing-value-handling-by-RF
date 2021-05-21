@@ -21,5 +21,5 @@ Repeat step2 ~ 6 until the guess of the missing values do not change.\
 \
 Using this python module, you need to:\
 Firstly complete the step1 and 3 by yourself.\
-Pass in the dataset with the initial guess (step1 above), the leaf index of the samples in the RF.\
+Import this module and use the method Reat_Until_Converge. Pass in the dataset with the initial guess (step1 above), the leaf index of the samples in the RF.\
 You will get the new dataset with the guest refined and the error of the missing data to the ones in the last iteration.
